@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{> links}}
+</head>
+<body>
+	
+  {{> navbar}}
+
+  <div class="login-form">
+    <form class="form-login" action="/forget_password" method="post">
+      <label class="label-field">Enter Email Id To get Password Reset Email</label>
+      <input type="text" name="email" class="input">
+      <div class="fl">
+        <input type="submit" name="login" class="login" value="Submit">
+      </div>
+    </form>
+  </div>
+
+  {{> footer}}
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

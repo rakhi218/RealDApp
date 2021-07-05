@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+  {{> links}}
+</head>
+<body
+  class="grey lighten-3">
+
+  <!-- NAVBAR -->
+  {{>navbar}}
+
+
+  <!-- LOGIN MODAL -->
+  <div class="login-form">
+
+    <form class="form-login" method="POST" action="/login">
+      <label class="label-field">Email</label>
+      <input type="email" name="email" class="input">
+      <label class="label-field">Password</label>
+      <input type="password" name="password" class="input">
+      <div class="fl">
+        <p class="forget"><a href="/forget_password">Forget Password</a></p>
+        <input type="submit" value="Login" name="login" class="login" style="color: white; background:teal">
+      </div>
+      
+    </form>
+    
+  </div>
+
+ <!--------------- footer---------- -->
+
+ {{>footer}}
+ 
+ <script >
+      window.onload=async function(){
+
+      var accounts=await ethereum.request({method :'eth_requestAccounts'});     
+    }
+ </script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+</body>
+
+</html>

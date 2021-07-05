@@ -1,0 +1,56 @@
+
+  <nav class="z-depth-0 teal">
+    <div class="nav-wrapper container" style="height: 30px;">
+      <a href="/" class="brand-logo">
+        {{!-- <h1 class="company" style="display: inline; color:white;">Real DApp</h1> --}}
+        <img class="logo" src="img/white.svg">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      {{# if session.forget_pass}}
+      <li></li>
+      {{else}}
+        {{#if session.email}}
+
+        <li class="logged-in" style="display: block;">
+          <a href="/logout" class="white-text" id="logout">Logout</a>
+        </li>
+
+        {{# if session.otp_number}}
+        <li class="logged-in" style="display: block;">
+          <a href="/createProperty" class="white-text modal-trigger" data-target="modal-create">Create Property</a>
+        </li>
+        
+        <li class="logged-in" style="display: block;">
+          <a href="/account" class="white-text modal-trigger" data-target="modal-account">Account</a>
+        </li>
+
+        <li class="logged-out" style="display: block;">
+          <a href="/dashboard" class="white-text modal-trigger" data-target="modal-login">Dashboard</a>
+        </li>
+        {{/if}}
+        
+        {{else}}
+        {{# if session.email }}
+        <li></li>
+        {{else}}
+           <li class="logged-out" style="display: block;">
+          <a href="/" class="white-text modal-trigger" data-target="modal-signup">Home</a>
+        </li>
+        <li class="logged-out" style="display: block;">
+          <a href="/login" class="white-text modal-trigger" data-target="modal-login">Login</a>
+        </li>
+        <li class="logged-out" style="display: block;">
+          <a href="/otp" class="white-text modal-trigger" data-target="modal-signup">Sign up</a>
+        </li>
+          <li class="logged-out" style="display: block;">
+          <a href="/search" class="white-text modal-trigger" data-target="modal-signup">Listed Property</a>
+        </li>
+      
+        {{/if}}
+        {{/if}}
+        {{/if}}
+        
+      </ul>
+    </div>
+  </nav>
+  

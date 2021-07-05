@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{> links}}
+</head>
+<body>
+	
+  {{> navbar}}
+
+  <div>
+      <h3 class="text-center">Listed Properties</h3>
+      <div class="container" style="margin-top: 40px;">
+            <ul class="collapsible z-depth-0 guides" style="border: none;">
+                {{#each object}}
+                <li class="li-item">
+                    <div class="collapsible-header yellow lighten-4">Property Name: {{this.Property_name}}</div>
+                    <div class="collapsible-header white">Adrress Of the Property: {{this.Property_address}}</div>
+                    <div class="collapsible-header white">State Of the Property: {{this.Property_state}}</div>
+                    <div class="collapsible-header white">City Of the Property: {{this.Property_city}}</div>
+                    <div class="collapsible-header white">Sarve Of the Property: {{this.Property_sarve}}</div>
+                    <div class="collapsible-header white">Plot No Of the Property: {{this.Property_plot}}</div>
+                    <div class="collapsible-header white">Land Price: {{this.Property_price}}</div>
+                    
+                </li>
+                {{else}}
+                <h3 class="text-center" style="color:red">No Properties Yet</h3>
+                {{/each}}
+                         
+            </ul>
+       </div>
+  </div>
+
+  {{> footer}}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{> links}}
+</head>
+<body>
+	{{> navbar }}
+	<div class="login-form">
+
+    <form class="form-login" method="POST" action="/register">
+      <label class="label-field">Full Name</label>
+      <input type="text" name="full_name" class="input">
+      <label class="label-field">EMail</label>
+      <input type="email" name="email" class="input">
+      <label class="label-field">Password</label>
+      <input type="password" name="password" class="input">
+      <label class="label-field">Confirm Password</label>
+      <input type="password" name="confirm_password" class="input">
+      <input type="hidden" name="address" id="met-address">
+
+      <div class="fl">
+        <p class="forget"><a href="/login">Alredy Registerd/Login</a></p>
+        <input type="submit" name="login" class="login" id="reg">
+      </div>
+      
+    </form>
+    
+  </div>
+
+	{{> footer}}
+
+ <script>
+
+    window.onload=async function(){
+      
+      var accounts=await ethereum.request({method :'eth_requestAccounts'});
+      var curr_add=accounts[0];
+        document.getElementById("met-address").value = accounts[0];
+      console.log(accounts[0]);
+
+      
+}
+  </script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

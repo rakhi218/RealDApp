@@ -1,0 +1,152 @@
+<html lang="en">
+
+<head>
+  {{> links}}
+</head>
+<style>
+
+</style>
+<body
+  class="grey lighten-3" >
+
+  <!-- NAVBAR -->
+  {{>navbar}}
+
+  <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="signup-bio" required />
+          <label for="signup-bio">One Line Bio</label>
+        </div>
+        <div class="input-field">
+          <input type="number" id="signup-no" required />
+          <label for="signup-no">Enter your phone no</label>
+        </div>
+
+        <button class="btn teal darken-2 z-depth-0">Sign up</button>
+        <p class="error pink-text center align"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn teal darken-2 z-depth-0">Login</button>
+        <p class="error pink-text center align"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ACCOUNT MODAL -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account details</h4><br />
+      <div class="account-details"></div>
+    </div>
+  </div>
+
+  <!-- Create Property Modal -->
+  <div id="modal-create" class="modal">
+    <div class="modal-content">
+      <h4>Create Property</h4><br />
+      <form id="create-form">
+       <div class="input-field">
+          <input type="text" id="title" required>
+          <label for="title">Name of the Property</label>
+        </div>
+      
+        <div class="input-field">
+          <input type="text" id="cord" required>
+          <label for="cord">Enter Co-ordinates of your Property</label>
+        </div>
+        <div class="input-field">
+          <textarea  id="content" class="materialize-textarea" required></textarea>
+          <label for="content">Enter something about your Property</label>
+        </div>
+        <!-- <div class="input-field-photo" style="padding-bottom: 9px;">
+      
+          <p>Upload your property doc here</p>
+          <input type="file" id="myFile" name="filename">
+        
+        </div> -->
+        <button class="btn teal darken-2 z-depth-0">Create</button>
+      </form>
+    </div>
+  </div>
+  
+
+  <!-- Property List -->
+  <div class="container" style="margin-top: 40px;">
+    <ul class="collapsible z-depth-0 guides" style="border: none;">
+     
+    </ul>
+      
+  </div>
+
+
+ <!--  -->
+ <!-- Sections -->
+ <section >
+ 	<div class="Section" >
+ 	<div class="main-section">
+	 	<div class="dapp-info">
+	 		<h4 style="font-weight: bold;">What is Real DApp?</h4>
+	 		<p>Real DApp is the real estate blockchain based company that enables the land holders to 
+         make their own identity on blockchain network.The Real DApp is all about the 
+         Security,Transparency and Decentralization of whole network.</p>
+	 	</div>
+	 	<div class="requirements">
+	 		<h4 style="font-weight: bold;">How It Works?</h4>
+	 		<p>The Real DApp works on ethereum blockchain.It follows all the rules that require to fit into 
+         the environment prescribed by the ethereum smart contracts.The smart contract are the conditional 
+         statements and perform respective actions.Smart contracts are itself smart enuf to perform 
+         the actions which are predefined by the developers at the time of creattion of smart contracts. </p>
+	 	</div>
+	 	<div class="explore-dapp">
+	 		<h4 style="font-weight: bold;">What is Real DApp 2.0?</h4>
+	 		<p>Well Real DApp 2.0 is the next phase of Real DApp 1.0.
+         Real DApp 2.0 will come up with the lot of features like transfer 
+         of ownership of land,Tokens,Fractional ownership,etc.
+        <br> <span  style="color: brown;"> Want to learn more about Token and Fractional Ownership?</span>
+        <br><span><a href="https://dapp-world.com/blogs/01/tokenization-of-real-estate-based-on-blockchain-1620118879514">Click Here</a></span>
+       </p>
+	 	</div>
+ 	</div>
+ 	</div>
+ </section>
+
+ <!--------------- footer-------- -->
+
+ {{>footer}}
+ 
+
+</script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+</body>
+
+</html>

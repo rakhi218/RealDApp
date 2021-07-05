@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{> links}}
+</head>
+<body>
+	{{> navbar }}
+	<div class="login-form">
+
+    <form class="form-login" method="post" id="get-data" action="\createProperty">
+      <label class="label-field">Land Name</label>
+      <input type="text" name="land_name" id="land_name" class="input">
+      <label class="label-field">State</label>
+      <input type="text" name="land_state" id="land_name" class="input">
+      <label class="label-field">City</label>
+      <input type="text" name="land_city" id="land_name" class="input">
+      <label class="label-field">Sarve No</label>
+      <input type="tel" name="land_sarve" id="land_name" class="input">
+      <label class="label-field">Land Address</label>
+      <input type="text" name="land_address" class="input">
+      <label class="label-field">Land Plot No</label>
+      <input type="text" name="land_plot" id="land_name" class="input">
+      <label class="label-field">Land Price</label>
+      <input type="tel" name="land_price" class="input">
+      <label class="label-field">7/12 Land Proof</label>
+      <input type="file" id="land_proof" class="input">
+        <input type="hidden" name="path" id="path">
+      <input type="hidden" name="address" id="met-address" value={{address}}>
+
+      <div class="fl">
+        
+      </div>
+      
+    </form>
+    <button name="login" class="login" id="reg" onclick="register()">REGISTER</button>
+  </div>
+
+	{{> footer}}
+
+ <script>
+
+  var abi = [
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "Admin",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "pro",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "usr",
+        "type": "address"
+      }
+    ],
+    "name": "create_property",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "pro",
+        "type": "string"
+      }
+    ],
+    "name": "get_propery_owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "prop_usr",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
+
+var firebaseConfig = {
+    apiKey: "AIzaSyCjToW81dS5tnprLe_m_1nMrM3kVxFnIas",
+    authDomain: "land-registry-7d606.firebaseapp.com",
+    projectId: "land-registry-7d606",
+    storageBucket: "land-registry-7d606.appspot.com",
+    messagingSenderId: "392477987356",
+    appId: "1:392477987356:web:1d508eec027cc5910fc5d9",
+    measurementId: "G-TYJTSQZ38D"
+}
+
+
+firebase.initializeApp(firebaseConfig);
+
+var address = "0x5C0DdDbB3DB59a874ea2728C62Fb91a2eedb82DD";
+
+
+   async function register() {
+
+
+        var docu = document.getElementById("land_proof").files[0]; 
+
+      var web3 = new Web3(window.ethereum);
+        var contract = new web3.eth.Contract(abi,address);
+        console.log(contract);
+
+        var accounts=await ethereum.request({method :'eth_requestAccounts'});
+        var Metamask=document.getElementById("met-address").value;
+        if(Metamask==accounts[0])
+        {
+        var pro_name = document.getElementById("land_name").value;
+        const result = await contract.methods.create_property(pro_name,accounts[0]).send({ from:accounts[0] })
+        window.alert("property added to blockchain");
+  
+        const ref = await firebase.storage().ref("proofs").child(docu.name).child("img").put(docu);
+
+        var path = "proofs/"+docu.name+"/img" ;
+        document.getElementById("path").value = path;
+        var form = document.getElementById("get-data");
+        form.submit();
+        }
+        else
+        {
+          window.alert("Your Metamask Address is not registered");
+        }
+        
+      }
+
+  </script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

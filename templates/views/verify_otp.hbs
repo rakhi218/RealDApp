@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{> links}}
+</head>
+<body>
+	
+  {{> navbar}}
+
+  <div class="login-form">
+    <form class="form-login" action="/verify_otp" method="post">
+      <label class="label-field">Enter Otp We Just Sent On Your Mobile </label>
+      <input type="tel" name="otp_number" class="input">
+      <div class="fl">
+        <input type="submit" name="login" class="login" value="Verify">
+      </div>
+    </form>
+  </div>
+
+  {{> footer}}
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
+
+
+

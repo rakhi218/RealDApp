@@ -1,0 +1,176 @@
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	
+}
+.logo{
+	
+	width: 170px;
+	height: 70px;
+	/* image-resolution: 20px; */
+	display: inline;
+	left: 30px;
+}
+
+
+.footers-logo{
+	padding-top: 35px;
+	width:200px;
+	height: 200px;
+}
+.footer {
+	position: relative;
+	top: 0px;
+	margin-top: auto;
+	margin-top: 100px;
+	width: 100%;
+	background-color: #deeefe;
+	
+}
+.footers{
+	background-color:#F1C40F;
+}
+.footers-one {
+	display: flex;
+	flex-direction: row;
+}
+
+.text-center{
+	width: 50%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.social-icons{
+	padding-top: 50px;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	left: 500px;
+	top: 50px;
+}
+.footers-logo h1 ,p{
+	color: white;
+}
+.social{
+	margin-left: 20px;
+	color: white;
+}
+.footers-info{
+	width: 500px;
+}
+.social:hover {
+	cursor: pointer;
+	color: #76D7C4 ;
+	/* border: 2px ridge black; */
+	border-radius: 10px;
+}
+.main-section{
+	width: auto;
+	/* display: inline-block; */
+	flex-direction: row;
+	position: relative;
+	display: flex;
+	margin-left: auto;
+    margin-right: auto;
+	width: 50%;
+}
+.Section {
+	position: relative;
+	
+	/* display: flex; */
+	/* margin-left: auto;
+    margin-right: auto;
+	width: 50%;
+	 */
+}
+.main-section p{
+	color: black;
+
+	
+}
+.dapp-info {
+	vertical-align: auto;
+	text-align: left;
+	width: 350px;
+	padding: 10px;
+	margin-left: 20px;
+	border: 2px ridge black;
+	border-radius: 5px;
+	/* max-width: 300px; */
+	/* position: absolute;
+	top: 50%; */
+}
+
+.requirements {
+	text-align: left;
+	width: 350px;
+	padding: 10px;
+	margin-left: 20px;
+	border: 2px ridge black;
+	border-radius: 5px;
+	/* max-width: 300px; */
+	/* position: absolute;
+	top: 50%; */
+	
+}
+.explore-dapp {
+	text-align: left;
+	/* height: 300px; */
+	width: 350px;
+	padding: 10px;
+	margin-left: 20px;
+	border: 2px ridge black; 
+	 border-radius: 5px;
+	/* max-width: 300px; */
+	/* position: absolute;
+	top: 50%; */
+}
+
+/*Login Model*/
+.login-form {
+	margin: auto;
+	margin-top: 60px;
+	width: 50%;
+	position: relative;
+}
+
+.input {
+	width: 200px;
+}
+
+.label-field{
+	font-size: 20px;
+
+}
+.fl {
+	display: flex;
+}
+.forget {
+	margin-top: 20px;
+}
+
+.login {
+	position: absolute;
+	right: 0;
+	margin-top: 20px;	
+}
+
+.login-upload {
+	background-color: blue;
+	color: white;
+	position: absolute;
+	right: 90px;
+	margin-top: 20px;
+}
+
+.file {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.li-item {
+	margin-top: 50px;
+	position: relative;
+}
